@@ -173,6 +173,23 @@ export class CalculateComponent implements OnInit {
     }
   }
 
+  resetComponents() {
+    this.componentX.setValue('');
+    this.componentY.setValue('');
+    this.magnitude.setValue('');
+    this.degree.setValue('');
+  }
+
+  resetSum() {
+    this.magnitudeA.setValue('');
+    this.directionA.setValue('');
+    this.magnitudeB.setValue('');
+    this.directionB.setValue('');
+    this.magnitudeC.setValue('');
+    this.directionC.setValue('');
+    this.resultSum = false;
+  }
+
   round2Decimals(x: number): number {
     return Math.round(x * 100) / 100;
   }
