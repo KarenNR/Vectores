@@ -65,8 +65,8 @@
             </div>
         </div>
         <div class="row m-0 justify-content-center">
-            <div class="col-auto">
-                <button mat-raised-button color="accent" type="submit" [disabled]="!ExamForm.valid || answered">ENVIAR</button>
+            <div class="col-2">
+                <button mat-raised-button color="accent" type="submit" [disabled]="!ExamForm.valid || answered" class="full-width">ENVIAR</button>
             </div>
         </div>
     </form>
@@ -78,8 +78,8 @@
         <p><b>4.</b> {{ round2Decimals(question4) }}</p>
         <p><b>5.</b> {{ round2Decimals(question5) }}</p>
         <div class="row m-0 justify-content-center">
-            <div class="col-auto">
-                <button mat-raised-button color="accent" (click)="reset()">REINICIAR</button>
+            <div class="col-2">
+                <button mat-raised-button color="accent" (click)="reset()" class="full-width">REINICIAR</button>
             </div>
         </div>
     </div>
