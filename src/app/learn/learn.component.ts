@@ -27,7 +27,7 @@ export class LearnComponent implements OnInit {
   xComponentSubstitution = "$Ax = 100m\\cos{30}$";
   xComponentResult = "$Ax = 86.60m$"
   yComponentSubstitution = "$Ay = 100m\\sin{30}$";
-  yComponentResult = "$Ax = 50m$";
+  yComponentResult = "$Ay = 50m$";
 
   // Magnitude and direction
   magnitude = "$A = \\sqrt{Ax^2+Ay^2}$";
