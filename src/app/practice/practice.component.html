@@ -1,0 +1,86 @@
+<section class="section">
+    <div class="row m-0">
+        <h2>Practicar</h2>
+        <p>¡Pon a prueba tus conocimientos! Contesta las siguientes preguntas.</p>
+    </div>
+    <form [formGroup]="ExamForm" (ngSubmit)="evaluate()">
+        <div class="row m-0">
+            <div class="col-12 col-md-8 align-self-center">
+                <p><b>1.</b> Un vector tiene una magnitud de {{ magnitude1 }} y una dirección de {{ direction1 }}°. ¿Cuál es su componente en {{ component1 }}?</p>
+            </div>
+            <div class="col-12 col-md-4 m-0 align-self-center">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Componente en {{ component1 }}</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Componente en {{ component1 }}" formControlName="answer1">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-12 col-md-8 align-self-center">
+                <p><b>2.</b> Un vector tiene una componente en X de {{ component2 }} y una magnitud de {{ magnitude2 }}. ¿Cuál es su dirección?</p>
+            </div>
+            <div class="col-12 col-md-4 align-self-center">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Dirección</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Dirección" formControlName="answer2">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-12 col-md-8 align-self-center">
+                <p><b>3.</b> Obtén la magnitud de la suma de los siguientes dos vectores:</p>
+                <p><b>Vector A:</b> {{ magnitude3A }}, {{ direction3A }}°</p>
+                <p><b>Vector B:</b> {{ magnitude3B }}, {{ direction3B }}°</p>
+            </div>
+            <div class="col-12 col-md-4 align-self-center">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Magnitud</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Magnitud" formControlName="answer3">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-12 col-md-8 align-self-center">
+                <p><b>4.</b> Obtén la dirección resultante de la suma de los siguientes tres vectores:</p>
+                <p><b>Vector A:</b> ({{ xA4 }}, {{ yA4 }})</p>
+                <p><b>Vector B:</b> ({{ xB4 }}, {{ yB4 }})</p>
+                <p><b>Vector C:</b> ({{ xC4 }}, {{ yC4 }})</p>
+            </div>
+            <div class="col-12 col-md-4 align-self-center">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Dirección</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Dirección" formControlName="answer4">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-12 col-md-8 align-self-center">
+                <p><b>5.</b> Un coche se dirige {{ magnitude5A }} metros hacia el {{ direction5A }}, y luego cambia de rumbo y se dirige {{ magnitude5B }} metros hacia el {{ direction5B }}. ¿Cuál es la magnitud del desplazamiento resultante?</p>
+            </div>
+            <div class="col-12 col-md-4 align-self-center">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Magnitud</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Magnitud" formControlName="answer5">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row m-0 justify-content-center">
+            <div class="col-auto">
+                <button mat-raised-button color="accent" type="submit" [disabled]="!ExamForm.valid || answered">ENVIAR</button>
+            </div>
+        </div>
+    </form>
+    <div *ngIf="answered">
+        <h4>Respuestas</h4>
+        <p><b>1.</b> {{ round2Decimals(question1) }}</p>
+        <p><b>2.</b> {{ round2Decimals(question2) }}</p>
+        <p><b>3.</b> {{ round2Decimals(question3) }}</p>
+        <p><b>4.</b> {{ round2Decimals(question4) }}</p>
+        <p><b>5.</b> {{ round2Decimals(question5) }}</p>
+        <div class="row m-0 justify-content-center">
+            <div class="col-auto">
+                <button mat-raised-button color="accent" (click)="reset()">REINICIAR</button>
+            </div>
+        </div>
+    </div>
+</section>

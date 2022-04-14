@@ -1,0 +1,172 @@
+<section class="section">
+    <!--Definición de un vector-->
+    <div class="row m-0">
+        <h2>¿Qué es un vector?</h2>
+        <p>Es una magnitud física que tiene...</p>
+    </div>
+    <div class="row m-0">
+        <div class="col-4">
+            <img src="assets/images/magnitud.png" alt="Magnitud de un vector" class="col-image">
+            <p class="text-center">Magnitud</p>
+        </div>
+        <div class="col-4">
+            <img src="assets/images/direccion.png" alt="Dirección de un vector" class="col-image">
+            <p class="text-center">Dirección</p>
+        </div>
+        <div class="col-4">
+            <img src="assets/images/sentido.png" alt="Sentido de un vector" class="col-image">
+            <p class="text-center">Sentido</p>
+        </div>
+        <p class="reference">Imágenes recuperadas de <a href="https://www.flaticon.es/" target="_blank">Flaticon</a>.</p>
+    </div>
+    <div class="row m-0">
+        <div class="col-12 col-sm-6">
+            <p>Por ejemplo:</p>
+            <img src="assets/images/vector.png" alt="Ejemplo de un vector" class="full-image">
+        </div>
+        <div class="col-12 col-sm-6 align-self-center">
+            <p>En esta imagen...</p>
+            <ul>
+                <li><u>Magnitud:</u> Longitud de la flecha</li>
+                <li><u>Dirección:</u> Grado de inclinación de la flecha</li>
+                <li><u>Sentido:</u> Punta de la flecha</li>
+            </ul>
+        </div>
+    </div>
+    <!--Componentes de un vector-->
+    <div class="row m-0">
+        <h2 class="margin-top">Componentes de un vector</h2>
+        <p class="margin-bottom">Todos los vectores tienen dos componentes: <em>X</em> y <em>Y.</em> Por ejemplo, supongamos que tenemos un vector <b>A</b> de magnitud 100m y dirección 30°...</p>
+    </div>
+    <div class="row m-0 align-items-center">
+        <div class="col-12 col-md-5">
+            <img src="assets/images/ejemplo.png" alt="Ejemplo de componentes" class="full-image">
+        </div>
+        <div class="col-12 col-md-7">
+            <div class="row m-0">
+                <h4>Componente en X</h4>
+                <p>Componente del vector sobre el eje X. Para calcularlo, se utiliza la siguiente fórmula:</p>
+                <p [mathjax]="xComponent"></p> 
+                <p>En el caso de nuestro vector <b>A</b>, la componente X sería:</p>
+                <p [mathjax]="xComponentSubstitution"></p>
+                <p class="color-primary" [mathjax]="xComponentResult"></p>
+            </div>
+            <div class="row m-0">
+                <h4>Componente en Y</h4>
+                <p>Componente del vector sobre el eje Y. Para calcularlo, se utiliza la siguiente fórmula:</p>
+                <p [mathjax]="yComponent"></p>
+                <p>En el caso de nuestro vector <b>A</b>, la componente Y sería:</p>
+                <p [mathjax]="yComponentSubstitution"></p>
+                <p class="color-primary" [mathjax]="yComponentResult"></p>
+            </div>
+        </div>
+    </div>
+    <!--Fórmulas importantes-->
+    <div class="row m-0">
+        <h2 class="margin-top">Fórmulas importantes</h2>
+        <div class="col-6 col-sm-3">
+            <h4>Magnitud de un vector</h4>
+            <p [mathjax]="magnitude"></p>
+        </div>
+        <div class="col-6 col-sm-3">
+            <h4>Dirección de un vector</h4>
+            <p [mathjax]="direction"></p>
+        </div>
+        <div class="col-6 col-sm-3">
+            <h4>Componente en X</h4>
+            <p [mathjax]="xComponent"></p>
+        </div>
+        <div class="col-6 col-sm-3">
+            <h4>Componente en Y</h4>
+            <p [mathjax]="yComponent"></p>
+        </div>
+    </div>
+    <!--Propiedades de los vectores-->
+    <div class="row m-0">
+        <h2 class="margin-top">Propiedades de los vectores</h2>
+        <div class="col-12 col-md-6">
+            <h4>Igualdad de vectores</h4>
+            <p>Dos vectores son iguales cuando tienen la misma magnitud, la misma dirección y el mismo sentido, sin importar que no tengan el mismo origen.</p>
+            <button mat-raised-button color="accent" (click)="openDialog(1)">DEMOSTRACIÓN GRÁFICA</button>
+        </div>
+        <div class="col-12 col-md-6">
+            <h4>Suma conmutativa</h4>
+            <p>Cambiar el orden de los sumandos en una suma de vectores no altera la suma.</p>
+            <p [mathjax]="commutative" class="text-center"></p>
+            <button mat-raised-button color="accent" (click)="openDialog(2)">DEMOSTRACIÓN GRÁFICA</button>
+        </div>
+        <div class="col-12 col-md-6">
+            <h4>Suma asociativa</h4>
+            <p>Dados 3 elementos cualesquiera de un conjunto determinado se verifica que existe una operación que verifica la igualdad.</p>   
+            <p [mathjax]="associative" class="text-center"></p> 
+            <button mat-raised-button color="accent" (click)="openDialog(3)">DEMOSTRACIÓN GRÁFICA</button>
+        </div>
+        <div class="col-12 col-md-6">
+            <h4>Negativo de un vector</h4>
+            <p>El negativo de un vector se define como el vector que cuando se suma con A da cero.</p>
+            <p [mathjax]="negative" class="text-center"></p> 
+            <button mat-raised-button color="accent" (click)="openDialog(4)">DEMOSTRACIÓN GRÁFICA</button>
+        </div>
+    </div>
+    <!--Suma de vectores-->
+    <div class="row m-0">
+        <h2 class="margin-top">Suma de vectores</h2>
+        <p>Para sumar dos vectores, sumamos las componentes de cada vector.</p>
+    </div>
+    <div class="row m-0 justify-content-center">
+        <h4>Ejemplo 1</h4>
+        <div class="col-12 col-md-4">
+            <h5>Vector A</h5>
+            <p [mathjax]="vectorA"></p> 
+            <h5>Vector B</h5>
+            <p [mathjax]="vectorB"></p> 
+            <h5>Vector C</h5> 
+            <p [mathjax]="vectorC"></p> 
+        </div>
+        <div class="col-12 col-md-4">
+            <h5>A + B</h5>
+            <p [mathjax]="abc"></p> 
+            <p [mathjax]="abc2"></p> 
+            <h5>Magnitud del vector resultante</h5>
+            <p [mathjax]="magnitudeABC"></p> 
+            <p class="color-primary" [mathjax]="magnitudeRes"></p> 
+            <h5>Dirección del vector resultante</h5>
+            <p [mathjax]="directionABC"></p> 
+            <p class="color-primary" [mathjax]="directionRes"></p>
+        </div>
+        <div class="col-12 col-md-4 align-self-center">
+            <a href="https://newtondreams.com/" target="_blank">
+                <img src="assets/images/ejemplo1.png" alt="Imagen de ejemplo 1" class="full-image">
+            </a>
+        </div>
+    </div>
+    <div class="row m-0">
+        <h4 class="margin-top">Ejemplo 2</h4>
+        <div class="col-12 col-md-4">
+            <h5>Vector A</h5>
+            <p [mathjax]="vectorA2"></p> 
+            <p [mathjax]="a2xcomponent"></p> 
+            <p [mathjax]="a2ycomponent"></p> 
+            <h5>Vector B</h5>
+            <p [mathjax]="vectorB2"></p>  
+            <p [mathjax]="b2xcomponent"></p> 
+            <p [mathjax]="b2ycomponent"></p> 
+        </div>
+        <div class="col-12 col-md-4">
+            <h5>A + B</h5>
+            <p [mathjax]="ab"></p> 
+            <p [mathjax]="ab2"></p>
+            <h5>Magnitud del vector resultante</h5>
+            <p [mathjax]="magnitudeAB"></p> 
+            <p class="color-primary" [mathjax]="magnitudeRes2"></p> 
+            <h5>Dirección del vector resultante</h5>
+            <p [mathjax]="directionAB"></p> 
+            <p class="color-primary" [mathjax]="directionRes2"></p>
+        </div>
+        <div class="col-12 col-md-4 align-self-center">
+            <a href="https://newtondreams.com/" target="_blank">
+                <img src="assets/images/ejemplo2.png" alt="Imagen de ejemplo 2" class="full-image">
+            </a>
+        </div>
+    </div>
+</section>

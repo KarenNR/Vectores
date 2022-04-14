@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "vectores-673fb": {
+      "hosting": {
+        "Vectores": [
+          "vectores-673fb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "vectores-673fb"
+  }
+}

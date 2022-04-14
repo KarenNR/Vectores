@@ -1,0 +1,122 @@
+<section class="section">
+    <!--Component calculator-->
+    <form [formGroup]="ComponentForm" (ngSubmit)="calculateComponents()">
+        <div class="row m-0">
+            <h2>Calculadora de componentes</h2>
+            <p><b>Instrucciones:</b> Ingresa los valores que conozcas (por ejemplo, las componentes), y la calculadora se encargará de rellenar los espacios faltantes.</p>
+            <p><b>NOTA:</b> De preferencia, sólo llena dos campos.</p>
+        </div>
+        <div class="row m-0">
+            <div class="col-12 col-md-6">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Componente en X</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Componente en X" formControlName="componentX">
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-md-6">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Componente en Y</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Componente en Y" formControlName="componentY">
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-md-6">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Ángulo</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Ángulo" formControlName="degree">
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-md-6">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Magnitud del vector</mat-label>
+                    <input matInput autocomplete="off" type="number" placeholder="Magnitud" formControlName="magnitude">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row m-0 justify-content-center">
+            <div class="col-auto">
+                <button mat-raised-button color="accent" type="submit">CALCULAR</button>
+            </div>
+        </div>
+    </form>
+    <hr class="margin-top">
+    <!--Sum calculator-->
+    <form [formGroup]="SumForm" (ngSubmit)="calculateSum()">
+        <div class="row m-0">
+            <h2 class="margin-top">Calculadora de suma de vectores</h2>
+            <p><b>Instrucciones:</b> La siguiente calculadora permite sumar tres vectores. Ingresa la magnitud y dirección de cada vector. Si sólo deseas sumar 2 vectores, deja vacía la última columna.</p>
+            <p><b>Tip 1:</b> Puedes usar la calculadora de la parte de arriba para obtener la magnitud y dirección en caso de que lo necesites.</p>
+            <p><b>Tip 2:</b> Si necesitas sumar más de tres vectores, puedes sumar de pocos en pocos. Recuerda que la suma es <em>asociativa</em>.</p>
+        </div>
+        <div class="row m-0">
+            <div class="col-12 col-md-4">
+                <div class="row m-0">
+                    <h4>Vector A</h4>
+                </div>
+                <div class="row m-0">
+                    <div class="col-12">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Magnitud del vector A</mat-label>
+                            <input matInput autocomplete="off" type="number" placeholder="Magnitud del vector A" formControlName="magnitudeA">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Dirección del vector A</mat-label>
+                            <input matInput autocomplete="off" type="number" placeholder="Dirección del vector A" formControlName="directionA">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="row m-0">
+                    <h4>Vector B</h4>
+                </div>
+                <div class="row m-0">
+                    <div class="col-12">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Magnitud del vector B</mat-label>
+                            <input matInput autocomplete="off" type="number" placeholder="Magnitud del vector B" formControlName="magnitudeB">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Dirección del vector B</mat-label>
+                            <input matInput autocomplete="off" type="number" placeholder="Dirección del vector B" formControlName="directionB">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="row m-0">
+                    <h4>Vector C</h4>
+                </div>
+                <div class="row m-0">
+                    <div class="col-12">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Magnitud del vector C</mat-label>
+                            <input matInput autocomplete="off" type="number" placeholder="Magnitud del vector C" formControlName="magnitudeC">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Dirección del vector C</mat-label>
+                            <input matInput autocomplete="off" type="number" placeholder="Dirección del vector C" formControlName="directionC">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0 justify-content-center">
+            <div class="col-auto">
+                <button mat-raised-button color="accent" type="submit">CALCULAR</button>
+            </div>
+        </div>
+    </form>
+    <div class="row m-0" *ngIf="resultSum">
+        <h3>Resultados</h3>
+        <p><b>Componente X resultante:</b> {{ rx }}</p>
+        <p><b>Componente Y resultante:</b> {{ ry }}</p>
+        <p><b>Magnitud resultante:</b> {{ r }}</p>
+        <p><b>Dirección resultante:</b> {{ rtheta }}°</p>
+    </div>
+</section>
