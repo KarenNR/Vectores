@@ -136,7 +136,7 @@ export class PracticeComponent implements OnInit {
     // Question 4
     resX = this.xA4 + this.xB4 + this.xC4;
     resY = this.yA4 + this.yB4 + this.yC4;
-    this.question4 = Math.atan(resY/resX)*180/Math.PI;
+    this.question4 = this.convertDegree( resX, resY, Math.atan(resY/resX)*180/Math.PI);
 
     // Question 5
     let dir1 = 0;
@@ -216,5 +216,22 @@ export class PracticeComponent implements OnInit {
 
   round2Decimals(x: number): number {
     return Math.round(x * 100) / 100;
+  }
+
+  convertDegree(componentX: number, componentY: number, degree: number): number {
+    // I
+    if (componentX >= 0 && componentY >= 0) 
+      return degree;
+    // II
+    else if (componentX < 0 && componentY >= 0)
+      return degree + 180;
+    // III
+    else if (componentX < 0 && componentY < 0)
+      return degree + 180;
+    // IV
+    else if (componentX >= 0 && componentY < 0)
+      return degree + 360;
+    else
+      return degree;
   }
 }
